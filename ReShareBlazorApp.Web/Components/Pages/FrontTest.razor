@@ -1,0 +1,248 @@
+﻿@page "/front-test"
+@using System.Security.Claims
+@using Microsoft.AspNetCore.Components.Authorization
+
+<link rel="stylesheet" href="css/app.css" />
+
+<main>
+    <!-- Sekcja Hero -->
+    <section class="hero">
+        <div class="container hero-content">
+            <span class="eyebrow">
+                Elitarne Technikum Informatyczne · ETI
+            </span>
+
+            <h1>
+                Dobre rzeczy<br />
+                <span>krążą dalej.</span>
+            </h1>
+
+            <p>
+                Odkrywaj, dziel się i wykorzystuj to,
+                co wciąż ma wartość w społeczności ETI.
+            </p>
+
+            <div class="search-box">
+                <input type="text" placeholder="Czego szukasz w ETI?" />
+                <button>Szukaj</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statystyki Live -->
+    <section class="stats-section">
+        <div class="container stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">1,420+</div>
+                <div class="stat-label">Aktywnych ogłoszeń</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">850+</div>
+                <div class="stat-label">Wymian zrealizowanych</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">99.8%</div>
+                <div class="stat-label">Bezpieczeństwo ETI</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">24/7</div>
+                <div class="stat-label">Wsparcie społeczności</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Podrasowana Sekcja Kategorii (Odkrywaj) -->
+    <section class="section">
+        <div class="container">
+            <div class="section-heading-flex">
+                <div class="section-heading">
+                    <span class="eyebrow">Explore</span>
+                    <h2>Odkrywaj możliwości</h2>
+                    <p>Wybierz kategorię i znajdź dokładnie to, czego potrzebujesz.</p>
+                </div>
+                <a href="#" class="link-more">Zobacz wszystkie kategorie →</a>
+            </div>
+
+            <div class="category-grid">
+                <a href="#" class="category-card">
+                    <div class="category-card-header">
+                        <div class="category-icon-wrapper">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="6" width="20" height="12" rx="2"></rect>
+                                <path d="M12 12h.01"></path>
+                                <path d="M17 12h.01"></path>
+                                <path d="M7 12h.01"></path>
+                            </svg>
+                        </div>
+                        <span class="category-badge">140+ ofert</span>
+                    </div>
+                    <h3>Bilety i wydarzenia</h3>
+                    <p>Koncerty, festiwale, wydarzenia sportowe i rozrywka</p>
+                </a>
+
+                <a href="#" class="category-card">
+                    <div class="category-card-header">
+                        <div class="category-icon-wrapper">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M178 19.5 210 2"></path>
+                                <path d="M3 17l6-6 4 4 8-8"></path>
+                                <path d="M14 7h7v7"></path>
+                            </svg>
+                        </div>
+                        <span class="category-badge">85+ ofert</span>
+                    </div>
+                    <h3>Podróże i noclegi</h3>
+                    <p>Wyjazdy, vouchery, zniżki oraz noclegi</p>
+                </a>
+
+                <a href="#" class="category-card">
+                    <div class="category-card-header">
+                        <div class="category-icon-wrapper">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"></path>
+                                <circle cx="7" cy="17" r="2"></circle>
+                                <circle cx="17" cy="17" r="2"></circle>
+                            </svg>
+                        </div>
+                        <span class="category-badge">Popularne</span>
+                    </div>
+                    <h3>Transport i Przejazdy</h3>
+                    <p>Wspólne przejazdy, wolne miejsca w autach</p>
+                </a>
+
+                <a href="#" class="category-card">
+                    <div class="category-card-header">
+                        <div class="category-icon-wrapper">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                                <line x1="8" y1="21" x2="16" y2="21"></line>
+                                <line x1="12" y1="17" x2="12" y2="21"></line>
+                            </svg>
+                        </div>
+                        <span class="category-badge">210+ ofert</span>
+                    </div>
+                    <h3>Sprzęt IT i Elektronika</h3>
+                    <p>Wypożycz, kup lub wymień sprzęt komputerowy</p>
+                </a>
+
+                <a href="#" class="category-card">
+                    <div class="category-card-header">
+                        <div class="category-icon-wrapper">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12 6 12 12 16 14"></polyline>
+                            </svg>
+                        </div>
+                        <span class="category-badge">Nowe</span>
+                    </div>
+                    <h3>Usługi i wolne terminy</h3>
+                    <p>Pomoc w nauce, korepetycje, usługi i wolne czasy</p>
+                </a>
+
+                <a href="#" class="category-card">
+                    <div class="category-card-header">
+                        <div class="category-icon-wrapper">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                            </svg>
+                        </div>
+                        <span class="category-badge">Okazje</span>
+                    </div>
+                    <h3>Dom i przestrzeń</h3>
+                    <p>Miejsca garażowe, schowki i przestrzenie naukowe</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Smart Match Banner -->
+    <section class="section-sm">
+        <div class="container">
+            <div class="recommendation-banner">
+                <div class="recommendation-badge">AI Assistant</div>
+                <div class="recommendation-text">
+                    <span class="eyebrow">Smart Match</span>
+                    <h3>Może Ci się spodobać</h3>
+                    <p>Dopasowane specjalnie na podstawie Twoich zainteresowań i aktywności w ETI.</p>
+                </div>
+                <a href="#" class="button">Sprawdź rekomendacje →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ostatnie Oferty -->
+    <section class="section">
+        <div class="container">
+            <div class="section-heading">
+                <span class="eyebrow">Recently added</span>
+                <h2>Możliwości warte odkrycia</h2>
+                <p>Ostatnio dodane ogłoszenia przez społeczność</p>
+            </div>
+
+            <div class="offer-grid">
+                <div class="offer-card">
+                    <div class="offer-image">
+                        <span class="offer-tag">Muzyka</span>
+                        🎤
+                    </div>
+                    <div class="offer-info">
+                        <span class="offer-location">📍 Warszawa</span>
+                        <h3>Bilety na koncert Opener</h3>
+                        <p class="offer-price">120 zł</p>
+                    </div>
+                </div>
+
+                <div class="offer-card">
+                    <div class="offer-image">
+                        <span class="offer-tag">Transport</span>
+                        🏔️
+                    </div>
+                    <div class="offer-info">
+                        <span class="offer-location">📍 Kraków · Zakopane</span>
+                        <h3>Miejsce w samochodzie (weekend)</h3>
+                        <p class="offer-price">Podział kosztów</p>
+                    </div>
+                </div>
+
+                <div class="offer-card">
+                    <div class="offer-image">
+                        <span class="offer-tag">Podróże</span>
+                        🏨
+                    </div>
+                    <div class="offer-info">
+                        <span class="offer-location">📍 Cała Polska</span>
+                        <h3>Voucher hotelowy -20%</h3>
+                        <p class="offer-price">Za darmo</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sekcja Call to Action -->
+    <section class="cta">
+        <div class="container cta-content">
+            <div>
+                <span class="eyebrow">Share something valuable</span>
+                <h2>
+                    Masz coś, co może<br />
+                    przydać się komuś innemu?
+                </h2>
+            </div>
+            <a href="#" class="button button-light">
+                Dodaj ogłoszenie →
+            </a>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container footer-content">
+        <a href="#" class="main-navbar-brand">
+            Re<span>Shared</span>
+        </a>
+        <p>Dobre rzeczy krążą dalej w społeczności ETI.</p>
+        <p>© 2026 ReShared ETI</p>
+    </div>
+</footer>
